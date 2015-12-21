@@ -9,7 +9,10 @@ class User(db.Model):
     nickname = db.Column(db.String(64),index=True,unique=True)
     password = db.Column(db.String(100))
     email = db.Column(db.String(120),index=True,unique=True)
+    about_me = db.Column(db.Text(200))
+    last_seen = db.Column(db.DateTime)
     posts = db.relationship('Post', backref='author', lazy='dynamic')
+
 
 
     def avatar(self, size):

@@ -11,6 +11,10 @@
   </table>
 
   <h1>User: {{ user.nickname }}!</h1>
+  {% if user.about_me %}<p>{{ user.about_me }}</p>{% endif %}
+  {% if user.last_seen %}<p><i>Last seen on: {{ user.last_seen }}</i></p>{% endif %}
+
+
   <hr>
   {% for post in posts %}
 
